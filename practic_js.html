@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>praktika</title>
+<script>
+function test() {
+str = ""
+str += "x = " + window.event.x + "\n"
+str += "y = " + window.event.y + "\n"
+10
+str += "Вы нажали клавишу: "
+if (window.event.shiftKey) str += "Shift"
+if (window.event.ctrlKey) str += "Ctrl"
+if (window.event.altKey) str += "Alt" 
+alert(str)
+}
+</script>
+<script>
+function заменить() {
+x = window.event.srcElement // ссылка на объект
+x.innerText = "Программируем!" // замена текста
+}
+</script>
+
+<script>
+function out() {
+alert(document.form1.fieldtext.value);
+}
+function check() {
+// проверка состояния флажка
+var str = "Флажок ";
+if (document.form1.box.checked)
+str += "установлен"
+else
+str += "не установлен";
+alert(str);
+}
+</script>
+
+<script>
+function clickimage() {
+alert("Привет")
+}
+</script>
+
+<script>
+function analysis() {
+msg = ""
+for (i=0; i<document.all.length; i++)
+msg += i + " " + 
+document.all[i].tagName + " name = " 
++ document.all[i].name + "\n"
+return msg
+}
+</script>
+
+<script>
+var imgFile = new Array() // массив
+имен графических файлов
+imgFile[0] = "https://img1.akspic.ru/attachments/crops/1/7/1/2/0/102171/102171-peyzash-nebo-vodohranilishhe-priroda-fjord-1920x1080.jpg"
+imgFile[1] = "изображение1.jpg"
+imgFile[2] = "изображение2.jpg"
+var imgName = new Array() // массив
+названий картинок
+imgName[0] = "Первая картинка"
+imgName[1] = "Вторая картинка"
+imgName[2] = "Третья картинка"
+var imgObj = new Array() // массив 
+объектов изображений
+for (i=0; i<imgFile.length; i++) {
+imgObj[i] = new Image(100,100)
+imgObj[i].src = imgFile[i]
+}
+function imgshow(list) {
+var x = 
+list.options[list.selectedIndex].value
+document.all.img0.src = 
+eval("imgObj[" + x + "].src")
+}
+var clist = "<select onchange = 
+'imgshow(this)'>"
+for (i=0; i < imgFile.length; i++) 
+clist += "<option value=" + i + 
+">" + imgName[i]
+clist += "</select>"
+document.write(clist)
+</script>
+
+</head>
+
+<body>
+<p> 1</p>
+
+
+<script>
+alert("Начало работы скрипта");
+qu = confirm("Закрыть окно?");
+document.writeln(qu+';');
+uname = prompt("Введите имя", "Anonymous");
+document.writeln("Имя " + uname);
+
+
+
+</script>
+<p> 2</p>
+<h3>Редактор кодов JavaScript</h3>
+<p> Код: <br>
+<textarea id ="user_code" rows="10" 
+cols="60"></textarea>
+</p>
+<p> Результат: <br>
+<textarea id ="result" rows="3" 
+cols="60"></textarea>
+</p>
+<p>
+<button onclick="document.all.result.value=
+eval(user_code.value)">Выполнить</button>
+<button 
+onclick="document.all.user_code.value='';
+document.all.result.value='';">Очистить</button>
+</p>
+
+<p> 3</p>
+<button onclick="test()">Нажмите на
+кнопку</button>
+
+<p> 4</p>
+<button onclick="заменить()">Первая кнопка</button>
+<button onclick="заменить()">Вторая кнопка</button>
+
+<p> 5</p>
+<script>
+function ссылка() {
+res = confirm ("Перейти по ссылке?")
+if (!res) window.event.returnValue = false
+11
+}
+</script>
+<a onclick="ссылка()" href="http://www.asu.ru">Сайт
+АлтГУ</a>
+
+<p> 6</p>
+<script>
+function ссылка() {
+alert("Был щелчок на ссылке")
+window.event.returnValue = false
+}
+</script>
+<a onclick="ссылка()" href="">Здесь ничего нет</a>
+
+
+<p> 7</p>
+<div onclick="alert('Щелчок по блоку')">
+<img src="изображение.jpg" >
+<button onclick="alert('Щелчок по кнопке');
+window.event.cancelBubble=true">Нажмите</button>
+</div>
+
+<p> 8</p>
+<center>
+<img src="https://rb.asu.ru/public/uploads/1436255985_1435116368_logotip_viborka.jpg" name="p1" 
+width="128" height="128">
+</center>
+<p>
+<form name="f1">
+Имя:
+<input type="text" name="t1" value=""><br/>
+e-mail:
+<input type="text" name="t2" 
+value=""><br/><br/>
+<input type="button" name="b1" 
+value="Нажмите"
+onClick="alert('Привет!')"><br/><br/>
+<input type="text" name="t3" 
+value="Привет">
+<input type="button" value="На английском"
+onClick="document.f1.t3.value='Hello'">
+</form>
+</p>
+<p>
+<a href="http://www.asu.ru">Сайт АлтГУ</a>
+</p>
+
+<p> 9</p>
+<form name="form1">
+<input type="text" name="fieldtext" 
+value="первоначальный текст">
+14
+<input type="button" name="button1" 
+value="Кнопка 1"
+onClick="out()">
+<br>
+<input type="checkbox" name="box" CHECKED>
+<input type="button" name="button2" 
+value="Кнопка 2"
+onClick="check()">
+</form>
+
+<p> 10</p>
+<p>Вариант 1
+<img src="https://i.pinimg.com/originals/c7/8a/1f/c78a1ff26086681a2712a0477504b785.jpg" width="128" height="128"
+onclick="clickimage()"></p>
+<p>Вариант 2
+15
+<img src="https://mobimg.b-cdn.net/v3/fetch/ec/ec036f0f1cddedb4d0a7b1176c747982.jpeg" width="128" height="128"
+onclick='alert("тевирП")'></p>
+
+<p> 11</p>
+<h1>Страница</h1>
+<img src="изображение0.jpg">
+<p><a href="url"> Текст ссылки</a></p>
+<textarea name="field" rows="10" 
+cols="30"></textarea>
+<br>
+<button 
+onclick="document.all.field.value=analysis()">Название
+кнопки</button>
+
+<p> 12</p>
+<img id="img0" src="https://img1.akspic.ru/attachments/crops/1/7/1/2/0/102171/102171-peyzash-nebo-vodohranilishhe-priroda-fjord-1920x1080.jpg"width="128" height="128"
+onclick="clickimage()"></p>
+
+<p> 13</p>
+<script>
+var flag=false
+function imgchange() {
+if (flag) 
+document.all.img0.src='https://i.pinimg.com/originals/b1/02/dc/b102dcda56577ee8b860b89dadf0f4c0.jpg' width="128" height="128"
+else 
+document.all.img0.src='https://answit.com/wp-content/uploads/2017/01/full-hd.jpg' width="128" height="128"
+flag = !flag
+}
+</script>
+<img id="img0" src="https://i.pinimg.com/originals/b1/02/dc/b102dcda56577ee8b860b89dadf0f4c0.jpg" width="128" height="128"
+onclick="imgchange()">
+
+</body>
+</html>
